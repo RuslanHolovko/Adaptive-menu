@@ -1,0 +1,125 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-color: #fff;
+	font-family: Arial,Tahoma sans-serif;
+
+	a{
+		text-decoration: none;
+	}
+
+	li{
+		list-style-type: none;
+	}
+	
+	.wrapper{
+		/*background: url(../medusa.jpg) no-repeat 50% 0;*/
+		background-color:#fff; 
+		background-size: cover;
+		height: 1000px;
+		position: relative;
+		max-width: 1170px;
+		margin: 0 auto;
+
+		.overlay-wrapper{
+			padding: 20px;
+			height: 100%;
+			width: 100%;
+			
+		}
+
+		.nav ul{
+			text-align: center;
+			display: grid;
+			grid-template-columns: repeat(5,1fr);
+
+			a{
+				color: #38454f;
+				font-weight: bold;
+				text-transform: capitalize;
+				transition: .3s;
+				&:hover{
+					color: #c3c3c3;
+				}
+			}
+		}
+
+		.adaptive-menu{
+			display: none;
+		}
+
+		.button{
+			border: none;
+			outline: none;
+			text-decoration: none;
+			display: inline-block;
+			height: 30px;
+			width: 30px;
+			background: url(../menu-circle.svg) no-repeat;
+			background-color: transparent;
+			&:hover{
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+/*==============================MEDI-QUERIES========================*/
+@media screen and(max-width: 800px){
+	
+body{
+
+	.wrapper{
+
+	.nav{
+		height: 100vh;
+		width: 100%;
+		position: fixed;
+		overflow: auto;
+		top: 0;
+		left: -103%;
+		transition: .4s;
+	}
+
+	.adaptive-menu{
+		margin: 20px;
+    height: 30px;
+    width: 30px;
+    display: block;
+    top: 0;
+    left: 0;
+    position: fixed;
+	}
+
+	.showMenu{
+		left: 0;
+		top: 0;
+	}
+	
+	.nav{
+		ul{
+			min-height: 360px;
+			height: 100vh;
+			width: 60vw;
+			grid-template-columns: 60vw;
+			grid-template-rows: repeat(5,50px);
+			background-color: #FFD54F;
+			padding-top: 80px;
+			padding-left: 20px;
+			text-align: unset;
+			border-radius: 0px 15px 15px 0px;
+		}
+	}
+
+	/*Scrollbar-styles\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
+	::-webkit-scrollbar{
+		width: 0px!important;
+	}
+}
+}
+
+}
